@@ -5,34 +5,28 @@ import 'package:flutter/material.dart';
 class HexagramClipper extends CustomClipper<Path> {
   @override
   Path getClip(Size size) {
-    Path path = Path();
+    final Path path = Path();
+    final double centerX = size.width / 2;
+    final double centerY = size.height / 2;
+    final double radius = size.width / 2;
 
-    double width = size.width;
-    double height = size.height;
-    double radius = width / 2;
+    // Create upward triangle
+    path.moveTo(centerX, centerY - radius); // Top point
+    path.lineTo(centerX - radius * cos(pi / 6),
+        centerY + radius * sin(pi / 6)); // Bottom-left
+    path.lineTo(centerX + radius * cos(pi / 6),
+        centerY + radius * sin(pi / 6)); // Bottom-right
+    path.close();
 
-    // Calculate the points for the first triangle
-    List<Offset> triangle1 = _getTrianglePoints(Offset(width / 2, height / 2), radius);
-
-    // Calculate the points for the second triangle (rotated by 180 degrees)
-    List<Offset> triangle2 = _getTrianglePoints(Offset(width / 2, height / 2), radius, rotate: true);
-
-    // Add the triangles to the path
-    path.addPolygon(triangle1, true);
-    path.addPolygon(triangle2, true);
+    // Create downward triangle
+    path.moveTo(centerX, centerY + radius); // Bottom point
+    path.lineTo(centerX - radius * cos(pi / 6),
+        centerY - radius * sin(pi / 6)); // Top-left
+    path.lineTo(centerX + radius * cos(pi / 6),
+        centerY - radius * sin(pi / 6)); // Top-right
+    path.close();
 
     return path;
-  }
-
-  // Function to get the points for an equilateral triangle
-  List<Offset> _getTrianglePoints(Offset center, double radius, {bool rotate = false}) {
-    double angleOffset = rotate ? pi : 0;
-    List<Offset> points = [];
-    for (int i = 0; i < 3; i++) {
-      double angle = (i * 2 * pi / 3) + angleOffset;
-      points.add(Offset(center.dx + radius * cos(angle), center.dy + radius * sin(angle)));
-    }
-    return points;
   }
 
   @override

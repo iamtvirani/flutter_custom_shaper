@@ -5,7 +5,8 @@ class SemiCircleClipper extends CustomClipper<Path> {
   Path getClip(Size size) {
     final path = Path()
       ..moveTo(0, size.height)
-      ..arcToPoint(Offset(size.width, size.height), radius: Radius.circular(size.width / 2), clockwise: false)
+      ..arcToPoint(Offset(size.width, size.height),
+          radius: Radius.circular(size.width / 2), clockwise: false)
       ..lineTo(size.width, size.height)
       ..lineTo(0, size.height)
       ..close();

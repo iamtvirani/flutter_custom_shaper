@@ -12,8 +12,8 @@ class CustomShaper extends StatelessWidget {
     required this.clipper,
     this.child,
     this.color = Colors.blue,
-    this.width = 200,
-    this.height = 200,
+    this.width = 100,
+    this.height = 100,
   });
 
   @override

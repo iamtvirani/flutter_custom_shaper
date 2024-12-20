@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 class KiteClipper extends CustomClipper<Path> {
   @override
   Path getClip(Size size) {

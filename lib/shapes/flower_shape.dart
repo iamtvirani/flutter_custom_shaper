@@ -1,28 +1,42 @@
 import 'package:flutter/material.dart';
 
-class BrickWallClipper extends CustomClipper<Path> {
+class FlowerClipper extends CustomClipper<Path> {
   @override
   Path getClip(Size size) {
     final path = Path();
-    double brickWidth = size.width / 5;
-    double brickHeight = size.height / 5;
-    int rows = 5;
-    int columns = 5;
-    bool isOffsetRow = false;
+    final centerX = size.width / 2;
+    final centerY = size.height / 2;
+    final petalRadius = size.width / 3;
 
-    for (int row = 0; row < rows; row++) {
-      for (int column = 0; column < columns; column++) {
-        double xOffset = isOffsetRow && column != 0 ? brickWidth / 2 : 0;
-        path.addRect(Rect.fromLTWH(
-          column * brickWidth + xOffset,
-          row * brickHeight,
-          brickWidth,
-          brickHeight,
-        ));
-      }
-      isOffsetRow = !isOffsetRow;
-    }
+    // Top petal
+    path.moveTo(centerX, centerY - petalRadius);
+    path.quadraticBezierTo(
+        centerX - petalRadius, centerY - petalRadius, centerX, centerY);
+    path.quadraticBezierTo(centerX + petalRadius, centerY - petalRadius,
+        centerX, centerY - petalRadius);
 
+    // Right petal
+    path.moveTo(centerX + petalRadius, centerY);
+    path.quadraticBezierTo(
+        centerX + petalRadius, centerY - petalRadius, centerX, centerY);
+    path.quadraticBezierTo(centerX + petalRadius, centerY + petalRadius,
+        centerX + petalRadius, centerY);
+
+    // Bottom petal
+    path.moveTo(centerX, centerY + petalRadius);
+    path.quadraticBezierTo(
+        centerX + petalRadius, centerY + petalRadius, centerX, centerY);
+    path.quadraticBezierTo(centerX - petalRadius, centerY + petalRadius,
+        centerX, centerY + petalRadius);
+
+    // Left petal
+    path.moveTo(centerX - petalRadius, centerY);
+    path.quadraticBezierTo(
+        centerX - petalRadius, centerY + petalRadius, centerX, centerY);
+    path.quadraticBezierTo(centerX - petalRadius, centerY - petalRadius,
+        centerX - petalRadius, centerY);
+
+    path.close();
     return path;
   }
 

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-/// A clipper for creating a triangular shape.
 class TriangleClipper extends CustomClipper<Path> {
   @override
   Path getClip(Size size) {

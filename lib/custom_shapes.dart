@@ -24,7 +24,12 @@ export 'shapes/crescent_shape.dart';
 export 'shapes/leaf_shape.dart';
 export 'shapes/house_shape.dart';
 export 'shapes/lightning_shape.dart';
-export 'shapes/flower_shape.dart';
+export 'shapes/brickwall_shape.dart';
 export 'shapes/spiral_share.dart';
 export 'shapes/hexagram.dart';
-
+export 'shapes/flower_shape.dart';
+export 'shapes/sun_shade_shape.dart';
+export 'shapes/redial_spikes_shape.dart';
+export 'shapes/sun_burst.dart';
+export 'shapes/fill_hexagram.dart';
+export 'shapes/bubble_shape.dart';

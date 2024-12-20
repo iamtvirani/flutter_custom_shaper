@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dart:math' as Math;
+
 class StarClipper extends CustomClipper<Path> {
   @override
   Path getClip(Size size) {

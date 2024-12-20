@@ -12,8 +12,9 @@ class SpiralClipper extends CustomClipper<Path> {
 
     path.moveTo(centerX, centerY);
 
-    for (double angle = 0; angle < 4 * pi; angle += angleStep) {  // More rotations
-      radius += 0.5;  // Gradually increase the radius for a smoother spiral
+    for (double angle = 0; angle < 4 * pi; angle += angleStep) {
+      // More rotations
+      radius += 0.5; // Gradually increase the radius for a smoother spiral
       double x = centerX + radius * cos(angle);
       double y = centerY + radius * sin(angle);
       path.lineTo(x, y);
