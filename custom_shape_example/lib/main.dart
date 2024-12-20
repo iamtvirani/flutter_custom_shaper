@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Custom Shapes Example'),
+          title: Text('Flutter Custom Shapers'),
         ),
         body: SingleChildScrollView(
           child: Column(
