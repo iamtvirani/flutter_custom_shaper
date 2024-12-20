@@ -13,8 +13,6 @@ class SunShadeClipper extends CustomClipper<Path> {
 
     for (int i = 0; i < numPoints; i++) {
       final angle = (i * 2 * math.pi) / numPoints; // Angle in radians
-      final nextAngle =
-          ((i + 1) * 2 * math.pi) / numPoints; // Next angle in radians
       final radius = i.isEven ? outerRadius : innerRadius;
 
       final x1 = centerX + radius * math.cos(angle);
