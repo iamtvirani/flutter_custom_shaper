@@ -1,3 +1,3 @@
-## 0.0.1
-
-* TODO: Describe initial release.
+## [0.0.1]
+### Added
+- Initial creation of the `flutter_custom_shaper ` project.
