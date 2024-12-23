@@ -1,6 +1,6 @@
-import 'package:custom_shape/custom_shapes.dart';
-import 'package:custom_shape_example/model/shape_model.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_custom_shape_example/model/shape_model.dart';
+import 'package:flutter_custom_shaper/flutter_custom_shapes.dart';
 
 final List<ShapeModel> basicShapeModels = [
   ShapeModel(clipper: TriangleClipper(), label: 'Triangle'),

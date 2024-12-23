@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:custom_shape/custom_shape.dart';
+import 'package:flutter_custom_shape/flutter_custom_shape.dart';
 
 void main() {
   test('adds one to input values', () {

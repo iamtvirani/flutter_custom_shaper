@@ -1,4 +1,4 @@
-# custom_shape_example
+# flutter_custom_shape_example
 
 A new Flutter project.
 

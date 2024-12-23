@@ -1,7 +1,7 @@
-import 'package:custom_shape_example/ui/basic_shapes.dart';
-import 'package:custom_shape_example/ui/bubble_shape.dart';
-import 'package:custom_shape_example/ui/unique_shapes.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_custom_shape_example/ui/basic_shapes.dart';
+import 'package:flutter_custom_shape_example/ui/bubble_shape.dart';
+import 'package:flutter_custom_shape_example/ui/unique_shapes.dart';
 
 void main() {
   runApp(const MyApp());

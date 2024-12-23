@@ -1,6 +1,6 @@
 {
-    "name": "custom_shape_example",
-    "short_name": "custom_shape_example",
+    "name": "flutter_custom_shape_example",
+    "short_name": "flutter_custom_shape_example",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

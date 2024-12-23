@@ -1,5 +1,5 @@
-import 'package:custom_shape/custom_shapes.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_custom_shaper/flutter_custom_shapes.dart';
 
 class BubbleShapeScreen extends StatelessWidget {
   const BubbleShapeScreen({super.key});

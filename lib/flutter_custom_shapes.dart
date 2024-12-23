@@ -1,4 +1,4 @@
-export 'custom_shape.dart';
+export 'flutter_custom_shape.dart';
 export 'shapes/circle_shape.dart';
 export 'shapes/hexagon_shape.dart';
 export 'shapes/pentagon_shape.dart';
