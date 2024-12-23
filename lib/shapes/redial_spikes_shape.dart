@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'dart:math' as Math;
+import 'dart:math' as math;
 
 class RadialSpikesClipper extends CustomClipper<Path> {
   @override
@@ -13,14 +13,14 @@ class RadialSpikesClipper extends CustomClipper<Path> {
 
     for (int i = 0; i < numSpikes; i++) {
       // Angles for outer and inner points
-      final angleOuter = (i * 360 / numSpikes) * Math.pi / 180;
-      final angleInner = ((i + 0.5) * 360 / numSpikes) * Math.pi / 180;
+      final angleOuter = (i * 360 / numSpikes) * math.pi / 180;
+      final angleInner = ((i + 0.5) * 360 / numSpikes) * math.pi / 180;
 
       // Points for outer spike tip and inner valley
-      final xOuter = centerX + radius * Math.cos(angleOuter);
-      final yOuter = centerY + radius * Math.sin(angleOuter);
-      final xInner = centerX + innerRadius * Math.cos(angleInner);
-      final yInner = centerY + innerRadius * Math.sin(angleInner);
+      final xOuter = centerX + radius * math.cos(angleOuter);
+      final yOuter = centerY + radius * math.sin(angleOuter);
+      final xInner = centerX + innerRadius * math.cos(angleInner);
+      final yInner = centerY + innerRadius * math.sin(angleInner);
 
       // Move to outer point and draw the spike
       if (i == 0) {

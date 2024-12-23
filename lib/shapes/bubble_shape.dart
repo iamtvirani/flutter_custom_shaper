@@ -1,5 +1,6 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
-import 'dart:ui' as ui;
 
 class BubbleClipper extends CustomClipper<Path> {
   @override
@@ -30,9 +31,8 @@ class BubblePainter extends CustomPainter {
   });
 
   @override
-  void paint(Canvas canvas, Size canvasSize) {
-    // Use a default size if none is provided
-    final bubbleSize = size ?? Size(100, 100); // Default size is (100, 100)
+  void paint(Canvas canvas, Size size) {
+    final bubbleSize = size;
 
     final center = Offset(bubbleSize.width / 2, bubbleSize.height / 2);
     final radius = bubbleSize.width * 0.4; // Dynamic radius based on bubbleSize
@@ -41,8 +41,8 @@ class BubblePainter extends CustomPainter {
     final outerGradientPaint = Paint()
       ..shader = RadialGradient(
         colors: [
-          outerColor1 ?? Colors.blue.withOpacity(0.4),
-          outerColor2 ?? Colors.purple.withOpacity(0.3),
+          outerColor1 ?? Colors.blue.shade400,
+          outerColor2 ?? Colors.purple.shade300.withValues(blue: Colors.blue.a, colorSpace: ColorSpace.displayP3),
           Colors.transparent,
         ],
         stops: [0.6, 0.8, 1.0],
@@ -53,7 +53,7 @@ class BubblePainter extends CustomPainter {
     final innerGradientPaint = Paint()
       ..shader = RadialGradient(
         colors: [
-          innerColor ?? Colors.white.withOpacity(0.5),
+          innerColor ?? Colors.white.withValues(colorSpace: ColorSpace.displayP3),
           Colors.transparent,
         ],
         stops: [0.3, 1.0],
@@ -61,8 +61,7 @@ class BubblePainter extends CustomPainter {
     canvas.drawCircle(center, radius * 0.8, innerGradientPaint);
 
     // Top-left highlight
-    final highlightPaint = Paint()
-      ..color = innerColor ?? Colors.white.withOpacity(0.8);
+    final highlightPaint = Paint()..color = innerColor ?? Colors.white;
     final highlightRadius = radius * 0.15; // Dynamic highlight size
     canvas.drawCircle(
       Offset(bubbleSize.width * 0.35, bubbleSize.height * 0.35),
@@ -75,8 +74,8 @@ class BubblePainter extends CustomPainter {
     final bottomGlowGradientPaint = Paint()
       ..shader = RadialGradient(
         colors: [
-          outerColor2 ?? Colors.purple.withOpacity(0.6),
-          outerColor1 ?? Colors.blue.withOpacity(0.3),
+          outerColor2 ?? Colors.purple.shade600,
+          outerColor1 ?? Colors.blue.shade300,
           Colors.transparent,
         ],
         stops: [0.3, 0.6, 1.0],

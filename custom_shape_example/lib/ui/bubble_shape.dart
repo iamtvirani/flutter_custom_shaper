@@ -18,8 +18,8 @@ class BubbleShapeScreen extends StatelessWidget {
             style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
           ),
           CustomShaper(
-            height: 100,
-            width: 100,
+            height: 80,
+            width: 80,
             clipper: BubbleClipper(),
             child: CustomPaint(
               painter: BubblePainter(),

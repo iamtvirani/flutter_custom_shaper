@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'dart:math' as Math;
+import 'dart:math' as math;
 
 class StarClipper extends CustomClipper<Path> {
   @override
@@ -12,7 +12,7 @@ class StarClipper extends CustomClipper<Path> {
     for (int i = 0; i < 10; i++) {
       final angle = i * 36 * (3.14159 / 180.0);
       final r = i % 2 == 0 ? radius : radius / 2;
-      path.lineTo(cx + r * Math.cos(angle), cy + r * Math.sin(angle));
+      path.lineTo(cx + r * math.cos(angle), cy + r * math.sin(angle));
     }
 
     path.close();
