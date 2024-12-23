@@ -14,7 +14,7 @@
     <pre>
 <code>
 dependencies:
-  custom_shape: ^1.0.0
+  flutter_custom_shaper: ^0.0.1
 </code>
     </pre>
     <p>Then, run:</p>
