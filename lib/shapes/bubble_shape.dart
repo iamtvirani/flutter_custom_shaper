@@ -42,7 +42,9 @@ class BubblePainter extends CustomPainter {
       ..shader = RadialGradient(
         colors: [
           outerColor1 ?? Colors.blue.shade400,
-          outerColor2 ?? Colors.purple.shade300.withValues(blue: Colors.blue.a, colorSpace: ColorSpace.displayP3),
+          outerColor2 ??
+              Colors.purple.shade300.withValues(
+                  blue: Colors.blue.a, colorSpace: ColorSpace.displayP3),
           Colors.transparent,
         ],
         stops: [0.6, 0.8, 1.0],
@@ -53,7 +55,8 @@ class BubblePainter extends CustomPainter {
     final innerGradientPaint = Paint()
       ..shader = RadialGradient(
         colors: [
-          innerColor ?? Colors.white.withValues(colorSpace: ColorSpace.displayP3),
+          innerColor ??
+              Colors.white.withValues(colorSpace: ColorSpace.displayP3),
           Colors.transparent,
         ],
         stops: [0.3, 1.0],

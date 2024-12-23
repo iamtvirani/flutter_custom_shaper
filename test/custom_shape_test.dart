@@ -25,7 +25,8 @@ void main() {
       expect(containerWidget.constraints?.maxHeight, isNotNull);
     });
 
-    testWidgets('Applies custom color, width, and height', (WidgetTester tester) async {
+    testWidgets('Applies custom color, width, and height',
+        (WidgetTester tester) async {
       const customColor = Colors.red;
       const customWidth = 150.0;
       const customHeight = 150.0;
@@ -52,9 +53,9 @@ void main() {
       // Verify the dimensions of the CustomShaper
       final clipPathFinder = find.byType(ClipPath);
       final clipPathWidget = tester.widget<ClipPath>(clipPathFinder);
-      expect(clipPathWidget.clipBehavior, Clip.antiAlias); // Updated expectation
+      expect(
+          clipPathWidget.clipBehavior, Clip.antiAlias); // Updated expectation
     });
-
 
     testWidgets('Displays child widget', (WidgetTester tester) async {
       const childText = 'Hello, Custom Shaper!';
