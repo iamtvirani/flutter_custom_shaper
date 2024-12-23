@@ -1,6 +1,6 @@
-  <h1>Custom Shape Flutter Package</h1>
+  <h1>Flutter Custom Shape Package</h1>
     <p>
-        <code>custom_shape</code> is a Flutter package that provides utilities to create and work with custom-shaped widgets. It includes predefined shapes, clipper classes, and painters to help you easily create unique UI components.
+        <code>flutter_custom_shaper</code> is a Flutter package that provides utilities to create and work with custom-shaped widgets. It includes predefined shapes, clipper classes, and painters to help you easily create unique UI components.
     </p>
     <h2>Features</h2>
     <ul>
@@ -23,71 +23,6 @@ dependencies:
     </pre>
     <h2>Usage</h2>
     <p>Here’s a quick example of how to use the <code>custom_shape</code> package in your Flutter app:</p>
-    <h3>Example Code</h3>
-    <pre>
-<code>
-import 'package:flutter/material.dart';
-import 'package:custom_shape/custom_shapes.dart';
-
-void main() {
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Flutter Custom Shapes'),
-        ),
-        body: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: const [
-              BubbleShapeScreen(),
-              UniqueShapesScreen(),
-              BasicShapesScreen(),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-// Bubble Shape Example Screen
-class BubbleShapeScreen extends StatelessWidget {
-  const BubbleShapeScreen({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(20),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const Text(
-            "Bubble Shape",
-            style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-          ),
-          CustomShaper(
-            height: 100,
-            width: 100,
-            clipper: BubbleClipper(),
-            child: CustomPaint(
-              painter: BubblePainter(),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
-</code>
-    </pre>
     <h3>Available Screens</h3>
     <ol>
         <li><strong>BubbleShapeScreen</strong>: Displays a bubble-shaped widget.</li>
